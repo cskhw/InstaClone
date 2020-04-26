@@ -17,20 +17,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
-    <TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </TextInputLayout>
         <EditText
+            android:id="@+id/email_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/email">
-        </EditText>
+            android:hint="Email"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <EditText
+            android:inputType="textPassword"
+            android:id="@+id/password_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/password">
-        </EditText>
+            android:hint="Password"/>
+    </com.google.android.material.textfield.TextInputLayout>
         <Button
+            android:id="@+id/email_login_button"
             android:text="@string/signin_email"
             android:theme="@style/ButtonStyle"
             android:layout_width="match_parent"
