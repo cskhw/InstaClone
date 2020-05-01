@@ -50,6 +50,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="35dp"/>
         <Button
+            android:id="@+id/facebook_login_button"
             android:text="@string/signin_facebook"
             android:textColor="@color/colorWhite"
             android:background="@drawable/btn_signin_facebook"
@@ -59,7 +60,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"/>
         <Button
-            android:text="@string/signin_facebook"
+            android:id="@+id/google_sign_in_button"
+            android:text="@string/signin_google"
             android:textColor="@color/colorWhite"
             android:background="@drawable/btn_signin_google"
             android:layout_width="match_parent"
