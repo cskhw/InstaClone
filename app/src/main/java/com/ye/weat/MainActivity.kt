@@ -8,6 +8,7 @@ import com.google.android.material.navigation.NavigationView
 import com.ye.weat.navigation.AlarmViewFragment
 import com.ye.weat.navigation.DetailViewFragment
 import com.ye.weat.navigation.GridViewFragment
+import com.ye.weat.navigation.UserViewFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 return true
             }
             R.id.action_account -> {
-                var userFragment = DetailViewFragment()
+                var userFragment = UserViewFragment()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, userFragment).commit()
                 return true
             }
