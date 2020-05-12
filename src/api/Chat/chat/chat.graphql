@@ -1,7 +1,0 @@
-type Query {
-    chat(where: ChatWhereUniqueInput!): Chat!
-}
-
-input ChatWhereUniqueInput {
-    id: ID!
-}

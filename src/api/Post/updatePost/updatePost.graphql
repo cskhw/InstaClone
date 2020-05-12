@@ -1,8 +1,0 @@
-type Mutation {
-    updatePost(data: UpdatePostInput! id: ID!): Post!
-}
-
-input UpdatePostInput {
-    caption: String
-    location: String
-}

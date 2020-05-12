@@ -1,3 +1,0 @@
-type Mutation {
-    toggleLike(postId: ID!): Boolean!
-}
