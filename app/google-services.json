@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:366653484853:android:b992ece4179e46063fe67c",
+        "mobilesdk_app_id": "1:366653484853:android:dcdd3939daba161f3fe67c",
         "android_client_info": {
-          "package_name": "com.ye.weat"
+          "package_name": "com.connple.weat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "366653484853-iao3etj7cfidb7f1acoa5pqttum9ug2o.apps.googleusercontent.com",
+          "client_id": "366653484853-anfdqp7al0uosg49v1bee8p3g72a6vu8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ye.weat",
-            "certificate_hash": "52b2eff5073f47c95e88a68df05e2be927e6bc90"
+            "package_name": "com.connple.weat",
+            "certificate_hash": "77c6252262ff83354c2a1c0ebb0928fef89dde6f"
           }
         },
         {

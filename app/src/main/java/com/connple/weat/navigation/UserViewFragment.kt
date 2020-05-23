@@ -1,11 +1,11 @@
-package com.ye.weat.navigation
+package com.connple.weat.navigation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ye.weat.R
+import com.connple.weat.R
 
 
 class UserViewFragment : Fragment(){

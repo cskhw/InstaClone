@@ -1,14 +1,13 @@
-package com.ye.weat
+package com.connple.weat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
-import com.ye.weat.navigation.AlarmViewFragment
-import com.ye.weat.navigation.DetailViewFragment
-import com.ye.weat.navigation.GridViewFragment
-import com.ye.weat.navigation.UserViewFragment
+import com.connple.weat.navigation.AlarmViewFragment
+import com.connple.weat.navigation.DetailViewFragment
+import com.connple.weat.navigation.GridViewFragment
+import com.connple.weat.navigation.UserViewFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{

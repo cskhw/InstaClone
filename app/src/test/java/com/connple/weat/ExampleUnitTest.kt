@@ -1,4 +1,4 @@
-package com.ye.weat
+package com.connple.weat
 
 import org.junit.Test
 
