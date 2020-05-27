@@ -9,16 +9,31 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        tools:context=".MainActivity">
+        android:layout_height="35dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/toolbar_btn_back"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginLeft="22dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+            <TextView
+                android:id="@+id/toolbar_username"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/toolbar_btn_back"
+                android:text="User ID"
+                android:textSize="16sp"
+                android:textColor="@color/colorNavIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/toolbar_title_image"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo_title">
-            </ImageView>
+                android:src="@drawable/logo_title"/>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
     <LinearLayout
@@ -29,11 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="1dp">
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/main_content"
-        android:layout_below="@id/toolbar_division"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_division"
+        android:layout_marginTop="2dp"></FrameLayout>
+
     <LinearLayout
         android:id="@+id/nav_division"
         android:background="@color/colorDivision"

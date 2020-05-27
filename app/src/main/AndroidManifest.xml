@@ -3,6 +3,7 @@
     package="com.connple.weat">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.connple.weat.MainActivity"/>
+        <activity android:name="com.connple.weat.navigation.AddPhotoActivity"/>
+
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity android:name="com.facebook.FacebookActivity" android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" />
