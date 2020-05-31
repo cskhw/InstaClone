@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.connple.weat.R
+import com.connple.weat.navigation.model.AlarmDTO
 import com.connple.weat.navigation.model.ContentDTO
+import com.connple.weat.navigation.util.FcmPush
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_comment.*
@@ -17,10 +20,15 @@ import kotlinx.android.synthetic.main.item_comment.view.*
 
 class CommentActivity : AppCompatActivity() {
     var contentUid: String? = null
+    var destinationUid : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comment)
         contentUid = intent.getStringExtra("contentUid")
+        destinationUid = intent.getStringExtra("destinationUid")
+
+        comment_recyclerview.adapter = CommentRecyclerviewAdapter()
+        comment_recyclerview.layoutManager = LinearLayoutManager(this)
 
         comment_btn_send?.setOnClickListener {
             var comment = ContentDTO.Comment()
@@ -31,11 +39,26 @@ class CommentActivity : AppCompatActivity() {
 
             FirebaseFirestore.getInstance().collection("images").document(contentUid!!)
                 .collection("comments").document().set(comment)
-
+            commentAlarm(destinationUid!!, comment_edit_message.text.toString())
             comment_edit_message.setText("")
+
         }
     }
+    fun commentAlarm(destinationUid : String, message : String){
+        var alarmDTO = AlarmDTO()
+        alarmDTO.destinationUid = destinationUid
+        alarmDTO.userId = FirebaseAuth.getInstance().currentUser?.email
+        alarmDTO.kind = 1
+        alarmDTO.uid = FirebaseAuth.getInstance().currentUser?.uid
+        alarmDTO.timestamp = System.currentTimeMillis()
+        alarmDTO.message = message
 
+        FirebaseFirestore.getInstance().collection("alarms").document().set(alarmDTO)
+
+
+        var msg = FirebaseAuth.getInstance().currentUser?.email + " " + getString(R.string.alarm_comment) + " of " + message
+        FcmPush.instance.sendMessage(destinationUid, "Hi", msg)
+    }
     inner class CommentRecyclerviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         var comments: ArrayList<ContentDTO.Comment> = arrayListOf()

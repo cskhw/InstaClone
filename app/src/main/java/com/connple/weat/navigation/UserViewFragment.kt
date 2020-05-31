@@ -17,8 +17,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.connple.weat.LoginActivity
 import com.connple.weat.MainActivity
 import com.connple.weat.R
+import com.connple.weat.navigation.model.AlarmDTO
 import com.connple.weat.navigation.model.ContentDTO
 import com.connple.weat.navigation.model.FollowDTO
+import com.connple.weat.navigation.util.FcmPush
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_user.view.*
@@ -132,7 +134,7 @@ class UserViewFragment : Fragment(){
                 followDTO = FollowDTO()
                 followDTO!!.followerCount = 1
                 followDTO!!.followers[currentUserUid!!] = true
-
+                followerAlarm(uid!!)
                 transaction.set(tsDocFollower,followDTO!!)
                 return@runTransaction
             }
@@ -141,14 +143,27 @@ class UserViewFragment : Fragment(){
                 followDTO!!.followerCount = followDTO!!.followerCount - 1
                 followDTO!!.followers.remove(currentUserUid!!)
             }else{
+                //It add my follower when I don't follow a third person
                 followDTO!!.followerCount = followDTO!!.followerCount + 1
                 followDTO!!.followers[currentUserUid!!] = true
+                followerAlarm(uid!!)
             }
             transaction.set(tsDocFollower,followDTO!!)
             return@runTransaction
 
         }
     }
+    fun followerAlarm(destinationUid : String){
+        var alarmDTO = AlarmDTO()
+        alarmDTO.destinationUid = destinationUid
+        alarmDTO.userId = auth?.currentUser?.email
+        alarmDTO.kind = 2
+        alarmDTO.timestamp = System.currentTimeMillis()
+        FirebaseFirestore.getInstance().collection("alarms").document().set(alarmDTO)
+        var message = auth?.currentUser?.email + getString(R.string.alarm_follow)
+        FcmPush.instance.sendMessage(destinationUid, "Hi", message)
+    }
+
 
     fun getProfileImage(){
         firestore?.collection("profileImage")?.document(uid!!)?.addSnapshotListener{documentSnapshot, firebaseFirestoreException ->
@@ -196,7 +211,5 @@ class UserViewFragment : Fragment(){
             var imageview = (p0 as CustomViewHolder).imageView
             Glide.with(p0.itemView.context).load(contentDTOs[p1].imageUrl).apply(RequestOptions().centerCrop()).into(imageview)
         }
-
-
     }
 }
