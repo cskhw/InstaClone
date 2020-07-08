@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".navigation.AddPhotoActivity"
+    android:id="@+id/activity_start"
+    >
+
+    <ImageButton
+        android:id="@+id/img_btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/back_01" />
+
+    <ImageView
+        android:id="@+id/img_1"
+        android:layout_width="match_parent"
+        android:layout_height="357dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/start_1"
+        android:layout_below="@id/img_btn_1"
+        />
+
+    <TextView
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="맛있는데, 할인까지?"
+        android:textStyle="bold"
+        android:textColor="#202020"
+        android:textSize="20dp"
+        android:layout_below="@+id/img_1"/>
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:layout_marginBottom="14dp"
+        android:text="오늘 점심으로 먹은 메뉴를 리뷰하고, \n 할인도 받아보세요."
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:layout_below="@+id/tv_1"/>
+    <TextView
+        android:layout_marginTop="28dp"
+        android:textAlignment="textStart"
+        android:layout_marginStart="22sp"
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="사용자 유형을 선택해주세요."
+        android:textStyle="bold"
+        android:textColor="#202020"
+        android:textSize="22sp"
+        android:layout_below="@+id/img_btn_1"/>
+
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="22sp"
+        android:text="일반 유저가 사장님으로 회원가입을 하는 경우 불이익을 받게됩니다."
+        android:textAlignment="textStart"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_3"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_2">
+
+        <ImageView
+            android:id="@+id/tab_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/tab_2"
+            android:background="@drawable/tab_icon" />
+
+        <ImageView
+            android:id="@+id/tab_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/tab_icon" />
+
+        <ImageView
+            android:id="@+id/tab_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/tab_2"
+            android:background="@drawable/tab_icon" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="23dp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:background="@null"
+        android:textSize="22sp"
+        android:layout_below="@id/tv_4"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/start_num"
+            android:gravity="center"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:nextFocusDown="@id/editText2"
+            android:textSize="22sp" />
+
+        <EditText
+
+            android:id="@+id/editText2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/editText1"
+            android:background="@drawable/start_num"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:nextFocusDown="@id/editText3"
+            android:gravity="center"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/editText2"
+            android:background="@drawable/start_num"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:nextFocusDown="@id/editText4"
+            android:gravity="center"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/editText3"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/start_num"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:nextFocusDown="@id/editText5"
+            android:gravity="center"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/editText4"
+            android:background="@drawable/start_num"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:nextFocusDown="@id/btn_1"
+            android:gravity="center"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/editText5"
+            android:background="@drawable/start_num"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="1"
+            android:gravity="center"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/div_1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#E4E4E4"
+        android:layout_marginHorizontal="23dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/editText">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/btn_next"
+        android:text="다음"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        />
+
+    <Button
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:id="@+id/btn_2"
+        android:text="로그인"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
+        android:background="@drawable/btn_next"
+        android:layout_marginBottom="24dp"
+        />
+    </LinearLayout>
+
+
+</RelativeLayout>

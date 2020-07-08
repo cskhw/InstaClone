@@ -52,14 +52,14 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
 
 
     // onStart. 유저가 앱에 이미 구글 로그인을 했는지 확인
-    public override fun onStart() {
-        super.onStart()
-        moveMainPage(Auth?.currentUser)
-        val account = GoogleSignIn.getLastSignedInAccount(this)
-        if(account!==null){ // 이미 로그인 되어있을시 바로 메인 액티비티로 이동
-            moveMainPage(Auth.currentUser)
-        }
-    } //onStart End
+//    public override fun onStart() {
+//        super.onStart()
+//        moveMainPage(Auth?.currentUser)
+//        val account = GoogleSignIn.getLastSignedInAccount(this)
+//        if(account!==null){ // 이미 로그인 되어있을시 바로 메인 액티비티로 이동
+//            moveMainPage(Auth.currentUser)
+//        }
+//    } //onStart End
 
     // onActivityResult
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

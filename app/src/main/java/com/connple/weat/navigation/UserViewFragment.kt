@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.connple.weat.LoginActivity
 import com.connple.weat.MainActivity
 import com.connple.weat.R
+import com.connple.weat.StartActivity
 import com.connple.weat.navigation.model.AlarmDTO
 import com.connple.weat.navigation.model.ContentDTO
 import com.connple.weat.navigation.model.FollowDTO
@@ -47,7 +47,7 @@ class UserViewFragment : Fragment(){
             fragmentView?.account_btn_follow_signout?.text = getString(R.string.signout)
             fragmentView?.account_btn_follow_signout?.setOnClickListener {
                 activity?.finish()
-                startActivity(Intent(activity, LoginActivity::class.java))
+                startActivity(Intent(activity, StartActivity::class.java))
                 auth?.signOut()
             }
         }else{
